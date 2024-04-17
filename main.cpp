@@ -1,6 +1,5 @@
 #include <iostream>
 #include <ncurses.h>
-#include <chrono>
 #include <thread>
 
 using namespace std;
