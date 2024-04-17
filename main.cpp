@@ -22,30 +22,30 @@ void area()
 void input()
 {
     char input{'0'};
-    int count = 0; // Лічильник введених символів
+    int count = 0; 
     while (input != '\x1b')
     {
         attron(COLOR_PAIR(2));
-        input = getch(); // Отримання наступного введеного символу
-        if (input != ERR) // Перевірка, чи введений символ не є помилкою
+        input = getch(); 
+        if (input != ERR) 
         {
-            if (input == '\x1b') // Перевірка, чи введено символ "Escape"
+            if (input == '\x1b') 
             {
                 attron(COLOR_PAIR(3));
                 mvprintw(0, 0, "Ty wyszedles!!!");
                 refresh();
                 break;
             }
-            if (count < 10) // Перевірка кількості введених символів
+            if (count < 10) 
             {
-                printw("%c", input); // Виведення символу на екран
+                printw("%c", input); 
                 refresh();
-                count++; // Збільшення лічильника введених символів
+                count++; 
             }
-            if (count == 10) // Перевірка, чи досягнуто ліміту введених символів
+            if (count == 10) 
             {
                 mvprintw(0, 0, "Limit!!!");
-                break; // Вихід з циклу, якщо досягнуто ліміту
+                break; 
             }
         }
         attroff(COLOR_PAIR(2));
